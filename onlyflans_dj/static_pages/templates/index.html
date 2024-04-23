@@ -1,68 +1,50 @@
 {% extends 'static_base.html' %}
 {% load static %}
-
 {% block 'content' %}
-<div class="card-group">
-    <div class="card">
-      <img src="static/img/flan-leche.jpg" class="card-img-top" alt="postre-card1">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+<div class="container-fluid row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mt-5">
+  {% for flan in flanes_publicos %}
+    <div class="col">
+      <div class="card">
+        <img src="{{ flan.image_url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ flan.name }}</h5>
+          <p class="card-text">{{ flan.description }}</p>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <img src="static/img/queques.jpg" class="card-img-top" alt="postre-card2">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-    <div class="card">
-      <img src="static/img/panqueques.jpg" class="card-img-top" alt="postre-card3">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
+</div>
 
-  <section id="Contacto" class="container my-5">
+<section id="Contacto" class="container my-5">
 
-    <h2 class="display-4 fw-bold text-center my-4">Contáctame</h2>
+  <h2 class="display-4 fw-bold text-center my-4">Contáctame</h2>
 
-    <p class="text-center my-4 d-none d-md-block">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+  <p class="text-center my-4 d-none d-md-block">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         Doloribus
         sapiente, autem delectus totam expedita
         animi corporis dolorem qui magnam, aspernatur officiis quasi culpa tempora est commodi. Voluptate beatae
         tempora quaerat?</p>
 
-    <form>
-
-
-        <div class="form-group mb-4">
+  <form>
+      <div class="form-group mb-4">
             <label class="mb-2">Nombre</label>
             <input class="form-control" placeholder="Nombre">
-        </div>
+      </div>
 
-        <div class="form-group mb-4">
+      <div class="form-group mb-4">
             <label class="mb-2">Correo electrónico</label>
             <input class="form-control" placeholder="Correo Electronico">
-        </div>
+      </div>
 
 
-        <div class="form-group mb-4">
+      <div class="form-group mb-4">
             <label class="mb-2">Mensaje</label>
             <textarea class="form-control" placeholder="Escribe aquí tu mensaje"></textarea>
-        </div>
+      </div>
 
-        <div class="my-3 text-end">
+      <div class="my-3 text-end">
             <button class="btn btn-lg btn-info text-light" type="submit">Enviar</button>
-        </div>
-
-    </form>
-
+      </div>
+  </form>
 </section>
 {% endblock %}
