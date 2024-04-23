@@ -1,0 +1,14 @@
+{% extends 'static_base.html' %}
+{% load static %}
+{% block 'content' %}
+
+<div class="container">
+    Contacto
+
+    <form action="/contacto" method= "post">
+        {%csrf_token%}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}
